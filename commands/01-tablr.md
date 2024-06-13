@@ -140,3 +140,25 @@ et en TRIANT
 SELECT * FROM director WHERE email LIKE '%e%' AND lastname LIKE '%e%' AND country IN ('FR', 'UK') AND age > 30 order by email;
 
 ```
+
+Tous les seront sur le fr pour les id de  0 à 10 
+```sql
+UPDATE director SET country = 'FR' WHERE id <= 10;
+
+```
+mettre le salaire à 10000000 pour le real qui ont moins de 20ans ou entre 40 et 70 ans 
+```sql
+update director set salary = 1000000.00 where  age <= 20 OR (age>=40 && age<= 70);
+```
+
+
+mettre à jour la colonne salaire pour pouvoir avoir 12 chiffre dont apres la virgule
+
+```sql
+alter table director modify salary decimal(14,2)
+```
+supprimer les realisateur qui n'ont pas la valeur fr ou uk en guise de pays 
+
+```sql
+DELETE FROM director WHERE country NOT IN ('FR', 'UK');
+```
