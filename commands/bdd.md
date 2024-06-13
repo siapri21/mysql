@@ -13,9 +13,11 @@ CREATE TABLE figurine (
 
 ```
 Sélectionnez la base de données nouvellement créée :
+
 Créez la table "figurine" avec des colonnes telles que "id" (clé primaire), "nom", "super_pouvoir", "annee_sortie" et "description" :
 Insérez des données dans la table "figurine" pour représenter des figurine Avengers :
 ('Iron Man', 'Armure surpuissante', 2008, 'Milliardaire et génie inventeur.'),
+
 ('Captain America', 'Force et endurance surhumaines', 2011, 'Héros emblématique de la Seconde Guerre mondiale.'),
 ('Thor', 'Contrôle de la foudre et marteau magique', 2011, 'Dieu nordique du tonnerre et prince d'Asgard.'),
 ('Hulk', 'Force et résistance surhumaines', 2008, 'Scientifique transformé en monstre vert lorsqu'il est en colère.'),
@@ -63,3 +65,38 @@ Supprimez la figurine Black Widow de la table "figurine" :
 ```sql
 DELETE FROM figurine where nom = 'Black widow';
 ```
+
+Créer la table "weapon" avec des colonnes telles que "id" (clé primaire), "nom", "description" :
+```sql
+CREATE TABLE weapon (
+     id INT AUTO_INCREMENT PRIMARY KEY,
+    nom VARCHAR(100),
+    description TEXT
+);
+
+```
+Insérez des données dans la table "weapon" pour représenter des armes Avengers :
+```sql
+INSERT INTO weapon (nom, description) VALUES ('Marteau', 'Marteau magique de Thor.'), ('Bouclier', 'Bouclier indestructible.'), ('Arc et flèches', 'Arc et flèches de Hawkeye.'), ('Armure', 'Armure spéciale conçue pour combattre Hulk.'), ('Vibranium Claws', 'Griffes en vibranium indestructible .');
+
+```
+('Marteau', 'Marteau magique de Thor.'),
+    ('Bouclier', 'Bouclier indestructible.'),
+    ('Arc et flèches', 'Arc et flèches de Hawkeye.'),
+    ('Armure', 'Armure spéciale conçue pour combattre Hulk.'),
+    ('Vibranium Claws', 'Griffes en vibranium indestructible .')
+
+Modifier la table "figurine" pour ajouter une colonne "weapon_id" :
+
+```sql
+ALTER TABLE figurine ADD COLUMN  weapon_id INT 
+```
+Modifier la table "figurine" pour ajouter une contrainte de clé étrangère avec la table "weapon" :
+```sql
+ALTER TABLE figurine ADD CONSTRAINT fk_weapon FOREIGN KEY (weapon_id) REFERENCES weapon(weapon_id);
+```
+Mettre la table "weapon" en relation avec la table "figurine" :
+id 1 = 2
+id 8 =5
+id =4 4
+Afficher tous les avengers
