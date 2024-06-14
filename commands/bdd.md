@@ -93,10 +93,15 @@ ALTER TABLE figurine ADD COLUMN  weapon_id INT
 ```
 Modifier la table "figurine" pour ajouter une contrainte de clé étrangère avec la table "weapon" :
 ```sql
-ALTER TABLE figurine ADD CONSTRAINT fk_weapon FOREIGN KEY (weapon_id) REFERENCES weapon(weapon_id);
+ALTER TABLE figurine ADD CONSTRAINT fk_weapon FOREIGN KEY (weapon_id) REFERENCES weapon(id);
 ```
 Mettre la table "weapon" en relation avec la table "figurine" :
 id 1 = 2
 id 8 =5
 id =4 4
 Afficher tous les avengers
+
+```sql
+SELECT  *FROM  figurine JOIN weapon ON figurine.weapon_id = weapon.id ;
+
+```
