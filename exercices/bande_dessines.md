@@ -83,6 +83,7 @@ CREATE TABLE bd (
 ```sql
 INSERT INTO  bd (titre, auteur_id , editeur_id , annee_parution) VALUES   ('Tintin au Tibet', 1, 1, 1960),('Astérix le Gaulois', 2, 2, 1961), ('Les Aventures de Blake et Mortimer', 1, 3, 1946);
 ```
+
 9. Effectuez des requêtes pour afficher les informations sur les bandes dessinées, les auteur et les éditeurs :
 
     - Afficher toutes les bandes dessinées avec les informations complètes :
@@ -105,11 +106,12 @@ INSERT INTO  bd (titre, auteur_id , editeur_id , annee_parution) VALUES   ('Tint
 
     - Afficher les bandes dessinées publiées après une certaine année (par exemple, après 1960) :
 
-### Cet exercice vous permet de créer une base de données pour des bandes dessinées belges, de gérer les relations entre les tables "bd", "auteur" et "editeur", et d'effectuer des requêtes pour obtenir des informations spécifiques.
+#Cet exercice vous permet de créer une base de données pour des bandes dessinées belges, de gérer les relations entre les tables "bd", "auteur" et "editeur", et d'effectuer des requêtes pour obtenir des informations spécifiques.
 
-Vous pouvez ajouter davantage de données, de tables et d'autres fonctionnalités de MySQL pour enrichir votre base de données selon vos besoins.
+ #Vous pouvez ajouter davantage de données, de tables et d'autres fonctionnalités de MySQL pour enrichir votre base de données selon vos besoins.
 
 -- Afficher les bandes dessinées publiées après une certaine année (par exemple, après 1960)
+
 ```sql
 SELECT bd.titre, bd.annee_parution, auteur.nom AS auteur, editeur.nom AS editeur FROM bd JOIN auteur ON bd.auteur_id = auteur.id JOIN editeur ON bd.editeur_id = editeur.id WHERE bd.annee_parution > 1960;
 ```
