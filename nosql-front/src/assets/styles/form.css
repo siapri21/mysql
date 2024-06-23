@@ -1,0 +1,23 @@
+.form{
+    display: block;
+    background: rgba(255, 0, 255, 0.112);
+    width: 300px;
+    height: 300px;
+    margin: 0 auto;
+    border-radius: 15px;
+}
+
+.input-field{
+    margin: 20px 10px;
+    width: 250px;
+    /* background: #fff; */
+    border: 1px solid #fff;
+}
+
+.Button{
+    display: block;
+    margin: 0 auto;
+    padding: 10px;
+    background: #871c8e;
+    border: 1px solid #871c8e;
+}
